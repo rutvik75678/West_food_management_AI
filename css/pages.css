@@ -1,0 +1,508 @@
+/* ============ FOODWISE AI · pages.css ============
+   Landing, login, app shell (sidebar/topbar/alerts),
+   page headers, pipelines, ecosystem map, responsive. */
+.landing {
+    min-height: 100vh
+}
+
+.ltop {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 48px;
+    border-bottom: 1px solid var(--line);
+    position: sticky;
+    top: 0;
+    background: var(--ltop-bg);
+    backdrop-filter: blur(10px);
+    z-index: 50
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 700;
+    letter-spacing: .02em
+}
+
+.brand .bx {
+    width: 30px;
+    height: 30px;
+    border-radius: 8px;
+    background: var(--acc-bright);
+    color: #0B120E;
+    display: grid;
+    place-items: center;
+    font-family: var(--serif);
+    font-size: 19px;
+    font-weight: 650
+}
+
+.brand small {
+    font-family: var(--mono);
+    font-size: 9px;
+    letter-spacing: .2em;
+    color: var(--ink3);
+    display: block
+}
+
+.hero {
+    padding: 84px 48px 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative
+}
+
+.hero h1 {
+    font-family: var(--serif);
+    font-weight: 650;
+    font-size: clamp(40px, 6vw, 74px);
+    line-height: 1.04;
+    letter-spacing: -.02em;
+    max-width: 820px
+}
+
+.hero h1 em {
+    font-style: italic;
+    color: var(--acc)
+}
+
+.hero .sub {
+    color: var(--ink2);
+    font-size: 16px;
+    max-width: 620px;
+    margin: 22px 0 30px;
+    line-height: 1.65
+}
+
+.pipe {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    margin: 34px 0;
+    padding: 18px 20px;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    background: var(--bg2)
+}
+
+.pipe .st {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: .18em;
+    padding: 7px 13px;
+    border: 1px solid var(--line2);
+    border-radius: 6px;
+    color: var(--ink2);
+    cursor: pointer;
+    transition: .2s
+}
+
+.pipe .st:hover,
+.pipe .st.on {
+    color: #141B0B;
+    background: var(--acc-bright);
+    border-color: var(--acc-bright);
+    font-weight: 700
+}
+
+.pipe .ar {
+    color: var(--ink3);
+    font-family: var(--mono)
+}
+
+.modindex {
+    max-width: 1200px;
+    margin: 70px auto;
+    padding: 0 48px
+}
+
+.modindex .row {
+    display: grid;
+    grid-template-columns: 70px 260px 1fr;
+    gap: 20px;
+    padding: 17px 6px;
+    border-bottom: 1px solid var(--line);
+    align-items: baseline;
+    transition: .2s;
+    cursor: pointer
+}
+
+.modindex .row:hover {
+    background: var(--hover)
+}
+
+.modindex .row:hover .mt {
+    color: var(--acc)
+}
+
+.modindex .no {
+    font-family: var(--mono);
+    color: var(--ink3);
+    font-size: 12px
+}
+
+.modindex .mt {
+    font-size: 17px;
+    font-weight: 600;
+    transition: .2s
+}
+
+.modindex .md {
+    color: var(--ink2);
+    font-size: 13px
+}
+
+/* app shell */
+.shell {
+    display: grid;
+    grid-template-columns: 236px 1fr;
+    min-height: 100vh
+}
+
+.side {
+    border-right: 1px solid var(--line);
+    padding: 18px 14px;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 4px
+}
+
+.side .brand {
+    padding: 4px 10px 18px
+}
+
+.sgroup {
+    font-family: var(--mono);
+    font-size: 9px;
+    letter-spacing: .24em;
+    color: var(--ink3);
+    padding: 16px 10px 7px;
+    text-transform: uppercase
+}
+
+.sitem {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 9px 10px;
+    border-radius: 9px;
+    color: var(--ink2);
+    font-size: 13px;
+    font-weight: 500;
+    border-left: 2px solid transparent;
+    transition: .15s;
+    position: relative
+}
+
+.sitem:hover {
+    color: var(--ink);
+    background: var(--bg2)
+}
+
+.sitem.on {
+    color: var(--ink);
+    background: var(--bg2);
+    border-left-color: var(--acc)
+}
+
+.sitem .lucide {
+    width: 15px;
+    height: 15px
+}
+
+.sitem .k {
+    font-family: var(--mono);
+    font-size: 9px;
+    color: var(--ink3);
+    margin-left: auto
+}
+
+.main {
+    padding: 0 28px 90px;
+    min-width: 0
+}
+
+.topbar {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--line);
+    margin-bottom: 24px;
+    position: sticky;
+    top: 0;
+    background: var(--topbar-bg);
+    backdrop-filter: blur(10px);
+    z-index: 40
+}
+
+.ptitle {
+    font-weight: 600;
+    font-size: 15px
+}
+
+.topbar .sp {
+    flex: 1
+}
+
+.avatar {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: var(--bg4);
+    border: 1px solid var(--line2);
+    display: grid;
+    place-items: center;
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--acc)
+}
+
+.bellbtn {
+    position: relative;
+    background: var(--bg2);
+    border: 1px solid var(--line);
+    border-radius: 9px;
+    width: 34px;
+    height: 34px;
+    display: grid;
+    place-items: center;
+    color: var(--ink2)
+}
+
+.bellbtn:hover {
+    color: var(--ink)
+}
+
+.bellbtn .cnt {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: var(--red);
+    color: #fff;
+    font-family: var(--mono);
+    font-size: 9px;
+    min-width: 15px;
+    height: 15px;
+    border-radius: 8px;
+    display: grid;
+    place-items: center;
+    padding: 0 3px
+}
+
+.alertpanel {
+    position: absolute;
+    top: 46px;
+    right: 0;
+    width: 360px;
+    background: var(--panel-bg);
+    border: 1px solid var(--line2);
+    border-radius: 14px;
+    padding: 8px;
+    z-index: 100;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, .6);
+    display: none
+}
+
+.alertpanel.open {
+    display: block;
+    animation: rise .25s
+}
+
+.alitem {
+    display: flex;
+    gap: 11px;
+    padding: 11px;
+    border-radius: 9px;
+    align-items: flex-start
+}
+
+.alitem:hover {
+    background: var(--bg3)
+}
+
+.alitem .t {
+    font-size: 12.5px
+}
+
+.alitem .s {
+    font-size: 11px;
+    color: var(--ink3);
+    font-family: var(--mono);
+    margin-top: 2px
+}
+
+.pagehead {
+    margin-bottom: 22px
+}
+
+.pagehead h1 {
+    font-family: var(--serif);
+    font-weight: 650;
+    font-size: 30px;
+    letter-spacing: -.01em;
+    margin: 6px 0 4px
+}
+
+.pagehead p {
+    color: var(--ink2);
+    max-width: 640px
+}
+
+.pipeline {
+    display: flex;
+    align-items: stretch;
+    gap: 0;
+    overflow-x: auto
+}
+
+.pipeline .pstage {
+    flex: 1;
+    min-width: 104px;
+    padding: 13px 10px;
+    text-align: center;
+    position: relative
+}
+
+.pipeline .pstage:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 22%;
+    height: 56%;
+    width: 1px;
+    background: var(--line)
+}
+
+.pipeline .pstage .pl {
+    font-family: var(--mono);
+    font-size: 9px;
+    letter-spacing: .2em;
+    color: var(--ink3);
+    margin-top: 5px
+}
+
+.pipeline .pstage.done {
+    color: var(--teal)
+}
+
+.pipeline .pstage.done .pl {
+    color: var(--teal)
+}
+
+.pipeline .pstage.active {
+    color: var(--acc)
+}
+
+.pipeline .pstage.active .pl {
+    color: var(--acc)
+}
+
+.pipeline .pstage.active {
+    background: rgba(200, 240, 75, .05);
+    border-radius: 10px
+}
+
+.ecosvg text {
+    font-family: var(--mono);
+    font-size: 9px;
+    fill: var(--ink2)
+}
+
+.sensorbig {
+    font-family: var(--mono);
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: -.02em
+}
+
+.mqttdiag {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    overflow-x: auto;
+    padding: 6px 0
+}
+
+.mqttdiag .mnode {
+    border: 1px solid var(--line2);
+    border-radius: 9px;
+    padding: 10px 13px;
+    font-family: var(--mono);
+    font-size: 11px;
+    white-space: nowrap;
+    background: var(--bg3)
+}
+
+.mqttdiag .mflow {
+    flex: 1;
+    min-width: 34px;
+    height: 1px;
+    background: var(--line2);
+    position: relative;
+    overflow: hidden
+}
+
+.mqttdiag .mflow::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 14px;
+    background: var(--acc);
+    animation: flowdot 2.2s linear infinite
+}
+
+@keyframes flowdot {
+    from {
+        left: -14px
+    }
+
+    to {
+        left: 100%
+    }
+}
+
+@media (max-width:1080px) {
+    .shell {
+        grid-template-columns: 64px 1fr
+    }
+
+    .side .sitem span,
+    .side .sgroup,
+    .side .brand div {
+        display: none
+    }
+
+    .kpiStrip {
+        grid-template-columns: repeat(3, 1fr)
+    }
+
+    .kpiStrip>div:nth-child(3n) {
+        border-right: 0
+    }
+
+    .kpiStrip>div {
+        border-bottom: 1px solid var(--line)
+    }
+
+    .demobody {
+        grid-template-columns: 1fr
+    }
+
+    .demosteps {
+        display: none
+    }
+
+    .demostage {
+        padding: 26px
+    }
+}

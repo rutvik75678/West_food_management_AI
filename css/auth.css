@@ -1,0 +1,139 @@
+/* ============ FOODWISE AI · auth.css ============ */
+.authtabs {
+    display: flex;
+    gap: 6px;
+    background: var(--bg3);
+    padding: 4px;
+    border-radius: 10px;
+    margin-bottom: 16px
+}
+
+.authtabs button {
+    flex: 1;
+    padding: 8px;
+    border-radius: 8px;
+    border: none;
+    background: transparent;
+    color: var(--ink2);
+    font-weight: 600;
+    font-size: 13px
+}
+
+.authtabs button.on {
+    background: var(--acc-bright);
+    color: #141B0B
+}
+
+.autherr {
+    display: none;
+    background: rgba(242, 112, 89, .1);
+    border: 1px solid rgba(242, 112, 89, .4);
+    color: var(--red);
+    padding: 9px 12px;
+    border-radius: 8px;
+    font-size: 12.5px;
+    margin-bottom: 12px
+}
+
+.role-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 9px;
+    margin: 10px 0 4px
+}
+
+.role-card {
+    border: 1px solid var(--line2);
+    border-radius: 11px;
+    padding: 11px;
+    background: var(--bg3);
+    text-align: left;
+    cursor: pointer;
+    transition: .18s
+}
+
+.role-card:hover {
+    border-color: var(--acc)
+}
+
+.role-card.sel {
+    border-color: var(--acc-bright);
+    background: var(--acc-dim);
+    box-shadow: 0 0 0 1px var(--acc-bright)
+}
+
+.role-card .rc-t {
+    font-weight: 700;
+    font-size: 12.5px;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    margin-bottom: 3px
+}
+
+.role-card .rc-d {
+    font-size: 10.5px;
+    color: var(--ink3);
+    line-height: 1.4
+}
+
+.role-card.sel .rc-t {
+    color: var(--acc)
+}
+
+.demoquick {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    margin-top: 10px
+}
+
+.joincard {
+    border: 1px dashed var(--line2);
+    border-radius: 12px;
+    padding: 14px;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    justify-content: space-between
+}
+
+.joincard:hover {
+    border-color: var(--acc)
+}
+
+.tlmini {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    margin-top: 8px
+}
+
+.tlmini .tm {
+    width: 22px;
+    height: 5px;
+    border-radius: 3px;
+    background: var(--bg4)
+}
+
+.tlmini .tm.on {
+    background: var(--teal)
+}
+
+.lstcard {
+    border: 1px solid var(--line);
+    border-radius: 13px;
+    padding: 15px;
+    background: var(--bg2);
+    margin-bottom: 11px
+}
+
+.lstcard.hot {
+    border-color: rgba(242, 112, 89, .45)
+}
+
+@media (max-width:480px) {
+    .role-grid {
+        grid-template-columns: 1fr
+    }
+}

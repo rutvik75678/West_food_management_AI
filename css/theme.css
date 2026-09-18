@@ -1,0 +1,46 @@
+/* ============ FOODWISE AI · theme.css ============
+   Light theme palette + cross-theme dashboard polish. */
+:root{
+  --acc-border:rgba(200,240,75,.4);
+  --card-shadow:none;
+  --tip-shadow:0 8px 24px rgba(0,0,0,.5);
+  --toast-shadow:0 12px 32px rgba(0,0,0,.5);
+  --side-shadow:none;
+  color-scheme:dark;
+}
+:root[data-theme='light']{
+  --bg:#EEF1E4; --bg2:#FCFDF9; --bg3:#E7EBDA; --bg4:#D8DEc6;
+  --line:rgba(27,36,23,.15); --line2:rgba(27,36,23,.3);
+  --ink:#1B2417; --ink2:#42503C; --ink3:#66735E;
+  --acc:#4A6506; --acc-bright:#B9E434; --acc-dim:rgba(105,140,22,.15);
+  --teal:#086B58; --amber:#8E5C03; --red:#B03B26;
+  --acc-border:rgba(105,140,22,.45);
+  --pt:#FCFDF9; --tip-bg:#FFFFFF; --toast-bg:#FFFFFF; --panel-bg:#FFFFFF;
+  --cop-bg:#FBFCF7; --demo-bg:#E9EDDC; --topbar-bg:rgba(248,250,241,.96);
+  --ltop-bg:rgba(248,250,241,.94); --scroll:#C3CDB2; --hover:rgba(27,36,23,.06);
+  --block:rgba(27,36,23,.06);
+  --card-shadow:0 1px 3px rgba(27,36,23,.08),0 6px 18px rgba(27,36,23,.06);
+  --tip-shadow:0 8px 24px rgba(27,36,23,.2);
+  --toast-shadow:0 12px 32px rgba(27,36,23,.18);
+  --side-shadow:1px 0 0 rgba(27,36,23,.1);
+  color-scheme:light;
+}
+body{transition:background .35s ease,color .35s ease}
+.card{box-shadow:var(--card-shadow)}
+.tip{box-shadow:var(--tip-shadow)}
+.toast{box-shadow:var(--toast-shadow)}
+.side{box-shadow:var(--side-shadow)}
+.alertpanel{box-shadow:var(--tip-shadow)}
+
+/* dashboard polish — both themes */
+.topbar{border-bottom:1px solid var(--line2)}
+.sitem.on{background:var(--acc-dim);border-left-color:var(--acc-bright)}
+.kpiStrip>div{transition:background .2s}
+.kpiStrip>div:hover{background:var(--hover)}
+.kpiStrip .num{letter-spacing:-.03em}
+.statline{box-shadow:var(--card-shadow)}
+.lstcard{box-shadow:var(--card-shadow)}
+.lstcard.hot{border-color:var(--red)}
+.badge{font-weight:700}
+.expandable summary{color:var(--acc)}
+.tbl th{color:var(--ink2)}

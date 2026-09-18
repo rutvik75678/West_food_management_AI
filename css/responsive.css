@@ -1,0 +1,308 @@
+/* ============ FOODWISE AI · responsive.css ============
+   Loads LAST so it wins. Mobile-first fixes at 768px,
+   extra tweaks at 420px. Uses !important to beat inline
+   grid styles in page templates. */
+
+@media (max-width:1080px) {
+    #svcOnline {
+        display: none
+    }
+}
+
+/* ---------- PHONE LAYOUT ---------- */
+@media (max-width:768px) {
+
+    /* shell: sidebar becomes an off-canvas drawer */
+    .shell {
+        grid-template-columns: 1fr !important
+    }
+
+    .side {
+        position: fixed;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 260px;
+        z-index: 220;
+        background: var(--bg2);
+        transform: translateX(-103%);
+        transition: transform .3s cubic-bezier(.22, .8, .3, 1);
+        height: 100vh !important;
+        height: 100dvh !important;
+        box-shadow: 20px 0 50px rgba(0, 0, 0, .45);
+    }
+
+    .side.open {
+        transform: none
+    }
+
+    .side .brand div {
+        display: block !important
+    }
+
+    .side .sitem span {
+        display: inline !important
+    }
+
+    .side .sgroup {
+        display: block !important
+    }
+
+    .sideback {
+        position: fixed;
+        inset: 0;
+        background: rgba(5, 9, 7, .6);
+        z-index: 210;
+        display: none
+    }
+
+    .sideback.open {
+        display: block
+    }
+
+    .menubtn {
+        display: grid !important
+    }
+
+    /* topbar: compact */
+    .topbar {
+        flex-wrap: wrap;
+        gap: 8px;
+        padding: 10px 0
+    }
+
+    .ptitle {
+        font-size: 13px;
+        flex: 1 1 auto
+    }
+
+    .topbar .btn-acc {
+        display: none
+    }
+
+    /* Run AI Demo lives in the drawer on phones */
+
+    /* every multi-column grid collapses to one column
+     (!important beats the inline grid-template-columns) */
+    .grid {
+        grid-template-columns: 1fr !important
+    }
+
+    /* KPI strip: 2 columns */
+    .kpiStrip {
+        grid-template-columns: 1fr 1fr !important
+    }
+
+    .kpiStrip>div {
+        border-right: 1px solid var(--line) !important;
+        border-bottom: 1px solid var(--line)
+    }
+
+    .kpiStrip>div:nth-child(2n) {
+        border-right: 0 !important
+    }
+
+    .kpiStrip .num {
+        font-size: 19px
+    }
+
+    /* impact statline stacks */
+    .statline {
+        flex-direction: column
+    }
+
+    .statline>div {
+        border-right: 0 !important;
+        border-bottom: 1px solid var(--line)
+    }
+
+    .statline>div:last-child {
+        border-bottom: 0
+    }
+
+    .statline .num {
+        font-size: 22px
+    }
+
+    /* typography & bars */
+    .pagehead h1 {
+        font-size: 23px
+    }
+
+    .frow {
+        grid-template-columns: 105px 1fr 38px !important;
+        font-size: 12px
+    }
+
+    .frow .fb {
+        height: 6px
+    }
+
+    /* tables become horizontally scrollable */
+    .tbl {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+        min-width: 480px
+    }
+
+    .card.pad0 {
+        overflow-x: auto
+    }
+
+    /* sensors / countdowns */
+    .sensorbig {
+        font-size: 19px
+    }
+
+    .countdown {
+        font-size: 24px
+    }
+
+    /* landing */
+    .ltop {
+        padding: 14px 16px
+    }
+
+    .hero {
+        padding: 48px 18px 30px
+    }
+
+    .hero .sub {
+        font-size: 14px
+    }
+
+    .modindex {
+        padding: 0 18px;
+        margin: 44px auto
+    }
+
+    .modindex .row {
+        grid-template-columns: 1fr !important;
+        gap: 4px;
+        padding: 14px 4px
+    }
+
+    .pipe {
+        padding: 14px
+    }
+
+    .pipe .st {
+        font-size: 10px;
+        padding: 6px 9px
+    }
+
+    /* demo overlay */
+    .demoov {
+        grid-template-rows: auto 1fr 54px
+    }
+
+    .demohead {
+        flex-wrap: wrap;
+        padding: 10px 12px;
+        gap: 8px;
+        height: auto
+    }
+
+    .demohead .brand div {
+        display: none
+    }
+
+    #demoStepLbl,
+    #demoClock {
+        display: none
+    }
+
+    .demostage {
+        padding: 22px 18px
+    }
+
+    .demoftr {
+        padding: 0 12px;
+        gap: 8px
+    }
+
+    .demoftr .demo-note {
+        display: none
+    }
+
+    .demoimpact {
+        gap: 12px;
+        font-size: 11px
+    }
+
+    .bigcount {
+        font-size: clamp(44px, 13vw, 72px)
+    }
+
+    /* copilot full-width */
+    .copilot {
+        width: 100vw
+    }
+
+    .copfab {
+        bottom: 18px;
+        right: 18px;
+        width: 50px;
+        height: 50px
+    }
+
+    /* misc */
+    .main {
+        padding: 0 14px 90px
+    }
+
+    .modal {
+        padding: 18px
+    }
+
+    .alertpanel {
+        position: fixed;
+        top: 58px;
+        right: 12px;
+        width: min(92vw, 360px)
+    }
+
+    .toastwrap {
+        left: 12px;
+        right: 12px;
+        bottom: 14px
+    }
+
+    .toast {
+        font-size: 12px
+    }
+}
+
+/* ---------- SMALL PHONES ---------- */
+@media (max-width:420px) {
+    .kpiStrip {
+        grid-template-columns: 1fr !important
+    }
+
+    .kpiStrip>div {
+        border-right: 0 !important
+    }
+
+    .topbar .badge,
+    .avatar {
+        display: none
+    }
+}
+
+/* hamburger button (hidden on desktop) */
+.menubtn {
+    display: none;
+    width: 34px;
+    height: 34px;
+    border-radius: 9px;
+    border: 1px solid var(--line);
+    background: var(--bg2);
+    color: var(--ink2);
+    place-items: center;
+    flex: 0 0 auto
+}
+
+.menubtn:hover {
+    color: var(--ink)
+}

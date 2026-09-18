@@ -1,0 +1,449 @@
+/* ============ FOODWISE AI · components.css ============
+   Cards, tables, forms, chart shells, toasts, modals,
+   timelines, KPI strips, expandables, print. */
+.card {
+    background: var(--bg2);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 18px 20px
+}
+
+.card.pad0 {
+    padding: 0;
+    overflow: hidden
+}
+
+.card-h {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 12px
+}
+
+.card-h h3 {
+    font-size: 15px;
+    font-weight: 600
+}
+
+.grid {
+    display: grid;
+    gap: 16px
+}
+
+.rise {
+    opacity: 0;
+    transform: translateY(14px);
+    animation: rise .55s cubic-bezier(.22, .8, .3, 1) forwards
+}
+
+@keyframes rise {
+    to {
+        opacity: 1;
+        transform: none
+    }
+}
+
+.tbl {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px
+}
+
+.tbl th {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--ink3);
+    text-align: left;
+    padding: 9px 12px;
+    border-bottom: 1px solid var(--line2)
+}
+
+.tbl td {
+    padding: 11px 12px;
+    border-bottom: 1px solid var(--line);
+    vertical-align: middle
+}
+
+.tbl tr:last-child td {
+    border-bottom: 0
+}
+
+.tbl tbody tr {
+    transition: .15s
+}
+
+.tbl tbody tr:hover {
+    background: var(--hover)
+}
+
+.conf {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px
+}
+
+.conf .ring {
+    transform: rotate(-90deg)
+}
+
+.frow {
+    display: grid;
+    grid-template-columns: 190px 1fr 44px;
+    align-items: center;
+    gap: 12px;
+    padding: 6px 0;
+    font-size: 12.5px
+}
+
+.frow .fb {
+    height: 7px;
+    background: var(--bg4);
+    border-radius: 4px;
+    overflow: hidden
+}
+
+.frow .fb i {
+    display: block;
+    height: 100%;
+    background: var(--acc);
+    border-radius: 4px;
+    width: 0;
+    transition: width .9s cubic-bezier(.22, .8, .3, 1)
+}
+
+.frow b {
+    font-family: var(--mono);
+    font-size: 12px;
+    text-align: right;
+    color: var(--ink2)
+}
+
+.chartwrap {
+    position: relative
+}
+
+.chartwrap canvas {
+    width: 100%;
+    display: block
+}
+
+.tip {
+    position: absolute;
+    pointer-events: none;
+    background: var(--tip-bg);
+    border: 1px solid var(--line2);
+    border-radius: 8px;
+    padding: 8px 10px;
+    font-family: var(--mono);
+    font-size: 11px;
+    display: none;
+    z-index: 5;
+    white-space: nowrap;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, .5)
+}
+
+.tip b {
+    color: var(--acc)
+}
+
+.meter {
+    display: flex;
+    gap: 3px;
+    height: 12px
+}
+
+.meter i {
+    flex: 1;
+    border-radius: 2px;
+    background: var(--bg4)
+}
+
+.field {
+    margin-bottom: 12px
+}
+
+.field label {
+    display: block;
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: var(--ink3);
+    margin-bottom: 6px
+}
+
+.field input,
+.field select {
+    width: 100%;
+    background: var(--bg3);
+    border: 1px solid var(--line2);
+    border-radius: 8px;
+    color: var(--ink);
+    padding: 10px 12px;
+    font-size: 13px;
+    outline: none
+}
+
+.field input:focus {
+    border-color: var(--acc)
+}
+
+input[type=range] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 100%;
+    height: 4px;
+    background: var(--bg4);
+    border-radius: 4px;
+    outline: none
+}
+
+input[type=range]::-webkit-slider-thumb {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--acc-bright);
+    cursor: pointer;
+    border: 3px solid var(--pt)
+}
+
+.toastwrap {
+    position: fixed;
+    bottom: 24px;
+    left: 24px;
+    z-index: 300;
+    display: flex;
+    flex-direction: column;
+    gap: 8px
+}
+
+.toast {
+    background: var(--toast-bg);
+    border: 1px solid var(--line2);
+    border-left: 3px solid var(--acc-bright);
+    border-radius: 10px;
+    padding: 11px 16px;
+    font-size: 13px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, .5);
+    animation: tin .3s cubic-bezier(.22, .8, .3, 1)
+}
+
+.toast.warn {
+    border-left-color: var(--amber)
+}
+
+.toast.crit {
+    border-left-color: var(--red)
+}
+
+.toast.ok {
+    border-left-color: var(--teal)
+}
+
+@keyframes tin {
+    from {
+        opacity: 0;
+        transform: translateY(10px)
+    }
+}
+
+.modal-back {
+    position: fixed;
+    inset: 0;
+    background: rgba(5, 9, 7, .7);
+    backdrop-filter: blur(4px);
+    z-index: 200;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    animation: fadein .2s
+}
+
+@keyframes fadein {
+    from {
+        opacity: 0
+    }
+}
+
+.modal {
+    background: var(--bg2);
+    border: 1px solid var(--line2);
+    border-radius: 16px;
+    max-width: 720px;
+    width: 100%;
+    max-height: 86vh;
+    overflow: auto;
+    padding: 24px 26px;
+    position: relative
+}
+
+.modal-x {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    background: var(--bg3);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    width: 30px;
+    height: 30px;
+    color: var(--ink2)
+}
+
+.expandable summary {
+    cursor: pointer;
+    list-style: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--acc)
+}
+
+.expandable summary::-webkit-details-marker {
+    display: none
+}
+
+.expandable summary::before {
+    content: "✦"
+}
+
+.statline {
+    display: flex;
+    gap: 0;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    overflow: hidden;
+    background: var(--bg2)
+}
+
+.statline>div {
+    flex: 1;
+    padding: 22px 26px;
+    border-right: 1px solid var(--line)
+}
+
+.statline>div:last-child {
+    border-right: 0
+}
+
+.statline .num {
+    font-size: 28px
+}
+
+.kpiStrip {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr)
+}
+
+.kpiStrip>div {
+    padding: 16px 20px;
+    border-right: 1px solid var(--line)
+}
+
+.kpiStrip>div:last-child {
+    border-right: 0
+}
+
+.kpiStrip .num {
+    font-size: 23px;
+    margin: 3px 0 2px
+}
+
+.delta {
+    font-family: var(--mono);
+    font-size: 10px
+}
+
+.up {
+    color: var(--teal)
+}
+
+.down {
+    color: var(--red)
+}
+
+.timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 0
+}
+
+.tl {
+    display: flex;
+    gap: 13px;
+    position: relative;
+    padding-bottom: 18px
+}
+
+.tl::before {
+    content: "";
+    position: absolute;
+    left: 8px;
+    top: 20px;
+    bottom: 0;
+    width: 1px;
+    background: var(--line)
+}
+
+.tl:last-child::before {
+    display: none
+}
+
+.tl .tdot {
+    width: 17px;
+    height: 17px;
+    border-radius: 50%;
+    border: 1.5px solid var(--line2);
+    background: var(--bg2);
+    flex: 0 0 auto;
+    display: grid;
+    place-items: center;
+    z-index: 1
+}
+
+.tl.done .tdot {
+    border-color: var(--teal);
+    background: var(--teal)
+}
+
+.tl.now .tdot {
+    border-color: var(--acc);
+    animation: pulse 1.4s infinite
+}
+
+.countdown {
+    font-family: var(--mono);
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: .02em
+}
+
+@media print {
+    body * {
+        visibility: hidden
+    }
+
+    .esgprint,
+    .esgprint * {
+        visibility: visible
+    }
+
+    .esgprint {
+        position: absolute;
+        inset: 0;
+        background: #fff;
+        color: #111
+    }
+}

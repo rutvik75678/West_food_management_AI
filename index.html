@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FoodWise AI — Predict. Prevent. Detect. Redistribute. Sustain.</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,650;1,9..144,500;1,9..144,650&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/pages.css">
+    <link rel="stylesheet" href="css/features.css">
+    <link rel="stylesheet" href="css/theme.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/auth.css">
+    <script>document.documentElement.dataset.theme = localStorage.getItem('fw_theme') || 'dark';</script>
+</head>
+
+<body>
+    <div id="app"></div>
+    <div class="toastwrap" id="toasts"></div>
+    <div id="modalRoot"></div>
+
+    <!-- Copilot drawer -->
+    <div class="copilot" id="copilot">
+        <div class="cophead">
+            <span class="ai-chip">FoodWise Copilot</span>
+            <span class="demo-note">local demo reasoning · app-aware</span>
+            <span style="flex:1"></span>
+            <button class="btn btn-sm btn-ghost" onclick="toggleCopilot(false)"><i data-lucide="x"></i></button>
+        </div>
+        <div class="copmsg" id="copMsgs"></div>
+        <div class="copchips" id="copChips"></div>
+        <div class="copinput">
+            <input id="copInput" placeholder="Ask about demand, waste, NGOs, CO₂…"
+                onkeydown="if(event.key==='Enter')copSend()">
+            <button class="btn btn-acc btn-sm" onclick="copSend()"><i data-lucide="send"></i></button>
+        </div>
+    </div>
+    <button class="copfab" id="copFab" onclick="toggleCopilot()" title="FoodWise Copilot">✦</button>
+
+    <!-- Demo overlay -->
+    <div class="demoov" id="demoOv">
+        <div class="demohead">
+            <div class="brand">
+                <div class="bx">F</div>
+                <div>FOODWISE AI <small>LIVE DEMONSTRATION</small></div>
+            </div>
+            <span class="ai-chip" id="demoStepLbl">Step 1/13</span>
+            <div class="demoprogress"><i id="demoProg"></i></div>
+            <span class="mono small faint" id="demoClock">0:00</span>
+            <button class="btn btn-sm" id="demoPauseBtn" onclick="demoPause()">Pause</button>
+            <button class="btn btn-sm" onclick="demoNext()">Next</button>
+            <button class="btn btn-sm" onclick="demoRestart()">Restart</button>
+            <button class="btn btn-sm" onclick="demoSkip()">Skip</button>
+            <button class="btn btn-sm btn-ghost" onclick="demoClose()"><i data-lucide="x"></i></button>
+        </div>
+        <div class="demobody">
+            <div class="demosteps" id="demoSteps"></div>
+            <div class="demostage" id="demoStage"></div>
+        </div>
+        <div class="demoftr">
+            <span class="kicker">Live impact</span>
+            <div class="demoimpact" id="demoImpact"></div>
+            <span style="flex:1"></span>
+            <span class="demo-note">SIMULATED SCENARIO · DEMO DATA · SYNTHETIC SENSORS</span>
+        </div>
+    </div>
+
+    <!-- Load order = the numbers. Do not reorder. -->
+    <script src="js/01-utils.js"></script>
+    <script src="js/02-data.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/03-charts.js"></script>
+    <script src="js/04-ai.js"></script>
+    <script src="js/05-router.js"></script>
+    <script src="js/06-public.js"></script>
+    <script src="js/07-dashboard.js"></script>
+    <script src="js/08-pages-ai.js"></script>
+    <script src="js/09-pages-ops.js"></script>
+    <script src="js/10-pages-intel.js"></script>
+    <script src="js/11-copilot.js"></script>
+    <script src="js/12-demo.js"></script>
+    <script src="js/13-theme.js"></script>
+    <script src="js/15-responsive.js"></script>
+    <script src="js/16-marketplace.js"></script>
+    <script src="js/17-redistribute.js"></script>
+    <script src="js/18-delivery-jobs.js"></script>
+    <script src="js/14-main.js"></script>
+</body>
+
+</html>
